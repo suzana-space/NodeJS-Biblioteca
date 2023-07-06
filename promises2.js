@@ -24,14 +24,16 @@ async function readFile(directory) {
     console.log(chalk.yellow("Operação concluída com sucesso!"));
     } 
     catch (error) {
-      solutionError(error);
+      treatingError(error);
     }
 }
   
-function solutionError(error){
+function treatingError(error){
     console.log(error)
     throw new Error(chalk.red(error.code, '- O arquivo não foi encontrado'))
 }
 
-
 readFile('./file.txt')
+
+export default readFile
+
